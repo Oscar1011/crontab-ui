@@ -17,7 +17,9 @@ RUN   apk --no-cache add \
       nodejs \
       npm \
       supervisor \
-      tzdata && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+      tzdata \
+      python3 \
+      py3-pip && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && echo "Asia/Shanghai" > /etc/timezone \
     && apk del tzdata
 
