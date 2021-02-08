@@ -16,7 +16,10 @@ RUN   apk --no-cache add \
       curl \
       nodejs \
       npm \
-      supervisor
+      supervisor \
+      tzdata && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+    && echo "Asia/Shanghai" > /etc/timezone \
+    && apk del tzdata
 
 COPY supervisord.conf /etc/supervisord.conf
 COPY . /crontab-ui
