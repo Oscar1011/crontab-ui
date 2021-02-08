@@ -1,5 +1,6 @@
-# docker run -d -p 8000:8000 alseambusher/crontab-ui
-FROM alpine:3.10
+ARG ALPINE_VER=3.10
+
+FROM ghcr.io/linuxserver/baseimage-alpine:${ALPINE_VER}
 
 ENV   CRON_PATH /etc/crontabs
 
