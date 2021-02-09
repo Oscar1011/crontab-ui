@@ -25,19 +25,19 @@
 <div class="container-fluid">
 	<h2>Cronjobs</h2>
 	<div class="form-group">
-		<label for="env_vars">Environment Variables:</label>
-		<textarea class="form-control" rows="3" id="env_vars" placeholder="# Please set PATH, MAILTO, HOME... here"></textarea>
+		<label for="env_vars">环境变量配置:</label>
+		<textarea class="form-control" rows="3" id="env_vars" placeholder="# 请在此设置 PATH, MAILTO, HOME... "></textarea>
 	</div>
-	<a class="btn btn-primary" onclick="newJob();"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> New</a>
-	<a class="btn btn-info" onclick="doBackup();"><span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span> Backup</a>
+	<a class="btn btn-primary" onclick="newJob();"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> 创建</a>
+	<a class="btn btn-info" onclick="doBackup();"><span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span> 备份</a>
 	<form id="import_form" enctype="multipart/form-data" action="<%= JSON.parse(routes).import %>" method="post" style="display:none">
 		<input type="file" id="import_file" name="import_file" onchange="$('#import_form').submit()"/>
 	</form>
-	<a class="btn btn-warning" onclick="import_db()"><span class="glyphicon glyphicon-import" aria-hidden="true"></span> Import</a>
-	<a class="btn btn-warning" href="<%= JSON.parse(routes).export %>"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Export</a>
+	<a class="btn btn-warning" onclick="import_db()"><span class="glyphicon glyphicon-import" aria-hidden="true"></span> 导入</a>
+	<a class="btn btn-warning" href="<%= JSON.parse(routes).export %>"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> 导出</a>
 	<!--<a class="btn btn-info" onclick="import_crontab()"><span class="glyphicon glyphicon-import" aria-hidden="true"></span> Import from crontab</a>-->
-	<a class="btn btn-success" onclick="getCrontab();"><span class="glyphicon glyphicon-open" aria-hidden="true"></span> Get from crontab</a>
-	<a class="btn btn-success" onclick="setCrontab();"><span class="glyphicon glyphicon-save" aria-hidden="true"></span> Save to crontab</a>
+	<a class="btn btn-success" onclick="getCrontab();"><span class="glyphicon glyphicon-open" aria-hidden="true"></span> 从crontab还原</a>
+	<a class="btn btn-success" onclick="setCrontab();"><span class="glyphicon glyphicon-save" aria-hidden="true"></span> 设定到crontab</a>
 	<br/>
 	<br/>
 
@@ -45,10 +45,10 @@
 		<thead>
 	<tr>
 		<th>#</th>
-		<th>Name</th>
-		<th>Job</th>
-		<th>Time</th>
-		<th>Last Modified</th>
+		<th>名称</th>
+		<th>任务</th>
+		<th>运行时间</th>
+		<th>最后修改时间</th>
 		<th></th>
 	</tr>
 </thead>
