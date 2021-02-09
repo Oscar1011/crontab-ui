@@ -11,6 +11,8 @@ WORKDIR /crontab-ui
 LABEL maintainer "@alseambusher"
 LABEL description "Crontab-UI docker"
 
+COPY locale.md /locale.md
+
 RUN   apk --no-cache add \
       wget \
       curl \
@@ -21,7 +23,8 @@ RUN   apk --no-cache add \
       python3 \
       py3-pip && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && echo "Asia/Shanghai" > /etc/timezone \
-    && apk del tzdata
+    && apk del tzdata \
+    && cat /locale.md | xargs -i /usr/glibc-compat/bin/localedef -i {} -f UTF-8 {}.UTF-8
 
 COPY supervisord.conf /etc/supervisord.conf
 COPY . /crontab-ui
