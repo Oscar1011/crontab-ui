@@ -18,7 +18,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">我的备份 <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
 	    <% if (backups.length == 0){ %>
-            	<li><a href="#">None</a></li>
+            	<li><a href="#">空的</a></li>
 	    <% } else { %>
 	    	<% backups.forEach(function(file){ %>
             		<li><a href="<%= JSON.parse(routes).restore %>?db=<%= file %>"><%= file %></a></li>
