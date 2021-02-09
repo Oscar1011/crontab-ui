@@ -24,9 +24,9 @@
 	<tr>
 		<th>Id</th>
 		<th></th>
-		<th>Job</th>
-		<th>Time</th>
-		<th>Last Modified</th>
+		<th>任务</th>
+		<th>运行时间</th>
+		<th>最后修改时间</th>
 	</tr>
 	<% var index = 1 %>
 	<% JSON.parse(crontabs).forEach(function(crontab){ %>
@@ -57,8 +57,8 @@
 
 
 	</table>
-	<a class="btn btn-primary" onclick="restore_backup('<%= db %>')"><span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span> Restore</a>
-	<a class="btn btn-danger" onclick="delete_backup('<%= db %>')"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Delete</a>
+	<a class="btn btn-primary" onclick="restore_backup('<%= db %>')"><span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span> 还原</a>
+	<a class="btn btn-danger" onclick="delete_backup('<%= db %>')"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> 删除</a>
 </div>
 <%- include('popup.ejs') -%>
 </body>
