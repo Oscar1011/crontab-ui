@@ -11,7 +11,7 @@ WORKDIR /crontab-ui
 LABEL maintainer "@alseambusher"
 LABEL description "Crontab-UI docker"
 
-COPY locale.md /locale.md
+#COPY locale.md /locale.md
 
 RUN   apk --no-cache add \
       wget \
