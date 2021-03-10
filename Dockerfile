@@ -20,7 +20,13 @@ RUN   apk --no-cache add \
       npm \
       supervisor \
       tzdata \
-      python3 \
+      musl-dev \
+      python3-dev \
+      libxml2-dev \
+      gcc \
+      libxslt-dev \
+      libffi-dev  \
+      alpine-sdk \
       py3-pip && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
       echo "Asia/Shanghai" > /etc/timezone && \
       apk del tzdata
