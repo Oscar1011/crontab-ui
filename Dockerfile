@@ -1,6 +1,6 @@
 ARG ALPINE_VER=3.10
 
-FROM ghcr.io/linuxserver/baseimage-alpine:${ALPINE_VER}
+FROM ghcr.io/linuxserver/alpine:${ALPINE_VER}
 
 ENV   CRON_PATH /etc/crontabs
 
