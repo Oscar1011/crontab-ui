@@ -1,6 +1,6 @@
 ARG ALPINE_VER=3.10
 
-FROM linuxserver/alpine:${ALPINE_VER}
+FROM lsiobase/alpine:${ALPINE_VER}
 
 ENV   CRON_PATH /etc/crontabs
 
