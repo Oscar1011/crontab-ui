@@ -242,14 +242,14 @@ app.listen(app.get('port'), app.get('host'), function() {
   });
   // If --autosave is used then we will also save whatever is in the db automatically without having to mention it explictly
   // we do this by watching log file and setting a on change hook to it
-  if (process.argv.includes("--autosave")){
-    crontab.autosave_crontab(()=>{});
-    fs.watchFile(crontab.crontab_db_file, () => {
-      crontab.autosave_crontab(()=>{
-        console.log("Attempted to autosave crontab");
-      });
+  //if (process.argv.includes("--autosave")){
+  crontab.autosave_crontab(()=>{});
+  fs.watchFile(crontab.crontab_db_file, () => {
+    crontab.autosave_crontab(()=>{
+      console.log("Attempted to autosave crontab");
     });
-  }
+  });
+  //}
   if (process.argv.includes("--reset")){
     console.log("Resetting crontab-ui");
     var crontabdb = crontab.crontab_db_file;
